@@ -1,10 +1,12 @@
 package main
 
-import "log"
+import (
+	"log"
+	"os"
+)
 
 func main() {
-	cmd := NewBcryptGenerateCmd()
-	if err := cmd.Execute(nil); err != nil {
+	if err := Run(os.Args); err != nil {
 		log.Fatalln(err)
 	}
 }
